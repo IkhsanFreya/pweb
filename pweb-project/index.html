@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZakatKu - Platform Zakat Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <!-- Replace the existing navbar section -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-stack">
+                    <div class="logo-arabic">زكاة</div>
+                    <h1>Zakat-in</h1>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    <span>Beranda</span>
+                </a>
+                <a href="#program" class="nav-link">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <span>Program</span>
+                </a>
+                <a href="#calculate" class="nav-link">
+                    <i class="fas fa-calculator"></i>
+                    <span>Hitung Zakat</span>
+                </a>
+                <a href="#about" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Tentang Kami</span>
+                </a>
+            </div>
+            <div class="nav-right">
+                <div class="payment-dropdown">
+                    <button class="donate-btn" onclick="toggleDropdown()">
+                        <i class="fas fa-wallet"></i>
+                        <span>Bayar Zakat</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="paymentDropdown">
+                        <a href="zakat.html" class="dropdown-item">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <span>Zakat</span>
+                        </a>
+                        <a href="infak.html" class="dropdown-item">
+                            <i class="fas fa-gift"></i>
+                            <span>Infak</span>
+                        </a>
+                        <a href="wakaf.html" class="dropdown-item">
+                            <i class="fas fa-mosque"></i>
+                            <span>Wakaf</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Salurkan Zakat Anda dengan Aman dan Terpercaya</h1>
+            <p>Platform zakat online yang amanah dan professional</p>
+            <button class="cta-button">Mulai Berzakat</button>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="stat-container">
+            <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <h3>100,000+</h3>
+                <p>Muzakki</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h3>Rp 50M+</h3>
+                <p>Dana Tersalurkan</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-mosque"></i>
+                <h3>1,000+</h3>
+                <p>Program Terlaksana</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Section -->
+    <section class="programs" id="program">
+        <h2>Ayo Mulai Berdonasi!</h2>
+        <!-- Update the program cards buttons -->
+        <div class="program-cards">
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="img/palestine.png" alt="Bagi Hari Raya">
+                    <div class="category-tag">Dakwah & Kemanusiaan</div>
+                </div>
+                <div class="program-content">
+                    <h3>Yuk, Membatu saudara kita di palestine!</h3>
+                    <p class="location">KOTA BANDA ACEH</p>
+                    <div class="program-info">
+                        <div class="collected">
+                            <span>Terkumpul</span>
+                            <h4>Rp 150.000</h4>
+                        </div>
+                        <div class="target">
+                            <span>34 Hari lagi</span>
+                        </div>
+                    </div>
+                    <button class="donate-now" onclick="window.location.href='donate.html?program=eid'">Ikut Donasi</button>
+                </div>
+            </div>
+            
+    
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="img/lebaran.png" alt="Bagi Hari Raya">
+                    <div class="category-tag">Dakwah & Kemanusiaan</div>
+                </div>
+                <div class="program-content">
+                    <h3>Yuk, Ikut Berikan Baju Hari Raya untuk Anak Yatim!</h3>
+                    <p class="location">KOTA BANDA ACEH</p>
+                    <div class="program-info">
+                        <div class="collected">
+                            <span>Terkumpul</span>
+                            <h4>Rp 150.000</h4>
+                        </div>
+                        <div class="target">
+                            <span>34 Hari lagi</span>
+                        </div>
+                    </div>
+                    <button class="donate-now" onclick="window.location.href='eid-donation.html'">Ikut Donasi</button>
+                </div>
+            </div>
+    
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="img/bencana.png" alt="Bantuan Bencana">
+                    <div class="category-tag">Dakwah & Kemanusiaan</div>
+                </div>
+                <div class="program-content">
+                    <h3>NU Peduli Bencana Banjir di Indonesia</h3>
+                    <p class="location">KOTA JAKARTA PUSAT</p>
+                    <div class="program-info">
+                        <div class="collected">
+                            <span>Terkumpul</span>
+                            <h4>Rp 2.280.000</h4>
+                        </div>
+                        <div class="target">
+                            <span>8 Hari lagi</span>
+                        </div>
+                    </div>
+                    <button class="donate-now" onclick="window.location.href='flood-donation.html'">Ikut Donasi</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator" id="calculate">
+        <div class="calc-container">
+            <h2>Kalkulator Zakat</h2>
+            <div class="calc-options">
+                <button class="calc-tab active">Zakat Penghasilan</button>
+                <button class="calc-tab">Zakat Mal</button>
+                <button class="calc-tab">Zakat Fitrah</button>
+            </div>
+            <div class="calc-form">
+                <div class="input-group">
+                    <label>Penghasilan per Bulan</label>
+                    <input type="number" placeholder="Rp 0">
+                </div>
+                <div class="input-group">
+                    <label>Penghasilan Tambahan</label>
+                    <input type="number" placeholder="Rp 0">
+                </div>
+                <button class="calculate-btn">Hitung Zakat</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ZakatKu</h3>
+                <p>Platform zakat online terpercaya yang membantu menyalurkan zakat Anda kepada yang membutuhkan.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p><i class="fas fa-phone"></i> +62 123 4567 890</p>
+                <p><i class="fas fa-envelope"></i> info@zakatku.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</p>
+            </div>
+            <div class="footer-section">
+                <h3>Media Sosial</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Zakat-in. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

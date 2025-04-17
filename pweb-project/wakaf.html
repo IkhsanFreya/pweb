@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wakaf - ZakatKu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="zakat-calc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Add this after the navbar and before zakat-container -->
+    <div class="back-button">
+        <a href="index.html" class="back-home">
+            <i class="fas fa-arrow-left"></i>
+            Kembali ke Beranda
+        </a>
+    </div>
+    <div class="zakat-container">
+        <div class="tab-navigation">
+            <a href="zakat.html" class="tab-item">
+                <i class="fas fa-hand-holding-heart"></i>
+                Zakat
+            </a>
+            <a href="infak.html" class="tab-item">
+                <i class="fas fa-gift"></i>
+                Infak
+            </a>
+            <a href="wakaf.html" class="tab-item active">
+                <i class="fas fa-mosque"></i>
+                Wakaf
+            </a>
+        </div>
+
+        <div class="quote-card">
+            <div class="quote-text">
+                <p>"Kamu sekali-kali tidak sampai kepada kebajikan (yang sempurna), sebelum kamu menafkahkan sebagian harta yang kamu cintai. Dan apa saja yang kamu nafkahkan maka sesungguhnya Allah mengetahuinya"</p>
+                <p class="quote-author">(QS Ali Imran: 92)</p>
+            </div>
+            <div class="quote-image">
+                <img src="img/alquran.png" alt="Decoration" class="floating">
+            </div>
+        </div>
+
+        <div class="calculator-section">
+            <div class="calc-header">
+                <img src="img/infaq.png" alt="Wakaf" class="calc-icon">
+                <h2>Ayo mulai wakaf!</h2>
+            </div>
+
+            <div class="zakat-type">
+                <select id="zakatType">
+                    <option value="">Wakaf Al-Qur'an</option>
+                </select>
+            </div>
+
+            <div class="calc-instruction">
+                <p>Mari wakaf tunai bersama kami!</p>
+            </div>
+
+            <div class="input-section">
+                <label>Nominal Wakaf</label>
+                <div class="amount-input">
+                    <span class="currency">Rp</span>
+                    <input type="number" id="wakafAmount" placeholder="10000" value="10000">
+                </div>
+            </div>
+
+            <button class="pay-zakat-btn">Wakaf sekarang</button>
+        </div>
+    </div>
+
+    <script src="zakat-calc.js"></script>
+</body>
+</html>
