@@ -2,18 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Person;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Models\Person;
+use App\Models\Category;
+use Illuminate\Http\Request;
 
 class PersonController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return Inertia::render('persons/index', []);
+        $query = Person::query()
+            ->with('category')
+            ->withCount('familyMembers as family_members_count');
+
+        // Apply filters
+        if ($request->filled('search')) {
+            $query->where('name', 'ilike', '%' . $request->search . '%');
+        }
+
+        if ($request->filled('category')) {
+            $query->where('category_id', $request->category);
+        }
+
+        $persons = $query->paginate(10)
+            ->withQueryString();
+
+
+        return Inertia::render('persons/index', [
+            'persons' => $persons,
+            'categories' => Category::all(),
+            'filters' => $request->only(['search', 'category'])
+        ]);
     }
 
     /**
