@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $fillable = ['name', 'description'];
+    protected $keyType = 'string';
+    public $incrementing = false;
+
+    public function persons()
+    {
+        return $this->hasMany(Person::class);
+    }
 
     public static function booted()
     {
