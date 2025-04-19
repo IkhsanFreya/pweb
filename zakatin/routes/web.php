@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PersonController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -13,5 +14,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 });
 
-require __DIR__.'/settings.php';
-require __DIR__.'/auth.php';
+Route::resource('persons', PersonController::class)->middleware('auth');
+
+require __DIR__ . '/settings.php';
+require __DIR__ . '/auth.php';
