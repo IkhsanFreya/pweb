@@ -23,7 +23,7 @@ class Person extends Model
         'category_id',
     ];
 
-    public function familyMember()
+    public function familyMembers()
     {
         return $this->hasMany(Person::class, 'family_id');
     }
