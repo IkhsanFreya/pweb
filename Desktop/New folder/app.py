@@ -681,21 +681,30 @@ with tab3:
         rc1, rc2 = st.columns([1, 2])
         with rc1:
             if HAS_OPENPYXL:
-                excel_bytes = build_excel(df_hist)
+                # Cache Excel bytes agar filename tidak berubah tiap rerun
+                if "excel_cache" not in st.session_state or \
+                   st.session_state.get("excel_cache_len") != len(df_hist):
+                    st.session_state.excel_cache = build_excel(df_hist)
+                    st.session_state.excel_cache_len = len(df_hist)
+                    st.session_state.excel_fname = (
+                        "CarPrice_AI_Riwayat_"
+                        + datetime.now().strftime("%Y%m%d_%H%M")
+                        + ".xlsx"
+                    )
                 st.download_button(
                     label="⬇️ Export Excel (.xlsx)",
-                    data=excel_bytes,
-                    file_name=f"CarPrice_AI_Riwayat_{datetime.now().strftime('%Y%m%d_%H%M')}.xlsx",
+                    data=st.session_state.excel_cache,
+                    file_name=st.session_state.excel_fname,
                     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     use_container_width=True,
                     help="Download riwayat dalam format Excel profesional",
                 )
             else:
-                csv_data = df_hist.to_csv(index=False).encode('utf-8')
+                csv_data = df_hist.to_csv(index=False).encode("utf-8")
                 st.download_button(
                     label="⬇️ Export CSV",
                     data=csv_data,
-                    file_name=f"CarPrice_AI_Riwayat_{datetime.now().strftime('%Y%m%d_%H%M')}.csv",
+                    file_name="CarPrice_AI_Riwayat.csv",
                     mime="text/csv",
                     use_container_width=True,
                 )
